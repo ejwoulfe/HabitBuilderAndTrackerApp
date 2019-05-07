@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00252AE322665B3C0052CF8F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00252AE222665B3C0052CF8F /* Info.plist */; };
+		00855AF12281DF3F001C183F /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00855AF02281DF3F001C183F /* DayViewController.swift */; };
+		00855AF32281DFDC001C183F /* DayView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00855AF22281DFDC001C183F /* DayView.storyboard */; };
 		D92381B61F9C5CDE002FF5E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92381B51F9C5CDE002FF5E0 /* AppDelegate.swift */; };
 		D92381B81F9C5CDE002FF5E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92381B71F9C5CDE002FF5E0 /* ViewController.swift */; };
 		D92381BD1F9C5CDE002FF5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D92381BC1F9C5CDE002FF5E0 /* Assets.xcassets */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		00252AE222665B3C0052CF8F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00855AF02281DF3F001C183F /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
+		00855AF22281DFDC001C183F /* DayView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DayView.storyboard; sourceTree = "<group>"; };
 		D92381B21F9C5CDE002FF5E0 /* HabitBuilderAndTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitBuilderAndTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92381B51F9C5CDE002FF5E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D92381B71F9C5CDE002FF5E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 				D92381CB1F9C5F68002FF5E0 /* CalenderView.swift */,
 				D92381BC1F9C5CDE002FF5E0 /* Assets.xcassets */,
 				D92381BE1F9C5CDE002FF5E0 /* LaunchScreen.storyboard */,
+				00855AF02281DF3F001C183F /* DayViewController.swift */,
+				00855AF22281DFDC001C183F /* DayView.storyboard */,
 			);
 			path = HabitBuilderAndTracker;
 			sourceTree = "<group>";
@@ -132,6 +138,7 @@
 			files = (
 				D92381C01F9C5CDE002FF5E0 /* LaunchScreen.storyboard in Resources */,
 				D92381BD1F9C5CDE002FF5E0 /* Assets.xcassets in Resources */,
+				00855AF32281DFDC001C183F /* DayView.storyboard in Resources */,
 				00252AE322665B3C0052CF8F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D92381B81F9C5CDE002FF5E0 /* ViewController.swift in Sources */,
+				00855AF12281DF3F001C183F /* DayViewController.swift in Sources */,
 				D92381CA1F9C5EC3002FF5E0 /* WeekdaysView.swift in Sources */,
 				D92381C81F9C5D61002FF5E0 /* MonthView.swift in Sources */,
 				D92381CC1F9C5F68002FF5E0 /* CalenderView.swift in Sources */,

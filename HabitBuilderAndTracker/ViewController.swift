@@ -28,6 +28,9 @@ class ViewController: UIViewController {
         calenderView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12).isActive=true
         calenderView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12).isActive=true
         calenderView.heightAnchor.constraint(equalToConstant: 365).isActive=true
+        
+        let rightBarBtn = UIBarButtonItem(title: "Button", style: .plain, target: self, action: #selector(rightBarBtnAction(sender:)))
+        self.navigationItem.rightBarButtonItem = rightBarBtn
 
     }
     
@@ -38,8 +41,10 @@ class ViewController: UIViewController {
     
     @objc func rightBarBtnAction(sender: UIBarButtonItem) {
       
-        self.view.backgroundColor=Style.bgColor
-        calenderView.changeTheme()
+        let storyBoard: UIStoryboard = UIStoryboard(name: "DayView", bundle: nil)
+        let DayViewController = storyBoard.instantiateViewController(withIdentifier: "day view") as! DayViewController
+        self.present(DayViewController, animated: true, completion: nil)
+    
     }
     
     let calenderView: CalenderView = {
