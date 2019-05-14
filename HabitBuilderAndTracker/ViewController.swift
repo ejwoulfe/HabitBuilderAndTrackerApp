@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         calenderView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 12).isActive=true
         calenderView.heightAnchor.constraint(equalToConstant: 365).isActive=true
         
-        let rightBarBtn = UIBarButtonItem(title: "Button", style: .plain, target: self, action: #selector(rightBarBtnAction(sender:)))
+        let rightBarBtn = UIBarButtonItem(title: "Habits", style: .plain, target: self, action: #selector(rightBarBtnAction(sender:)))
         self.navigationItem.rightBarButtonItem = rightBarBtn
 
     }

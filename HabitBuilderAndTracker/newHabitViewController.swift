@@ -17,8 +17,12 @@ class newHabitViewController: UIViewController{
     var friday = false;
     var saturday = false;
     var sunday = false;
-    public var update: ((String, Bool, Bool, Bool, Bool, Bool, Bool, Bool) ->())!
+    public var update: ((String) ->())!
     
+    @IBAction func cancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: {});
+        self.navigationController?.popViewController(animated: true);
+    }
     @IBOutlet weak var habitNameTextField: UITextField!
     
     override func viewDidLoad() {
@@ -27,10 +31,6 @@ class newHabitViewController: UIViewController{
         
     }
 
-    @IBAction func cancelButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-
-    }
     
     @IBAction func mondayButtonSelected(_ sender: UIButton) {
         if sender.isSelected {
@@ -106,7 +106,7 @@ class newHabitViewController: UIViewController{
    
     
     @IBAction func habitButtonPressed(_ sender: UIButton) {
-        update(habitNameTextField.text ?? "", monday, tuesday, wednesday, thursday, friday, saturday, sunday)
+        update(habitNameTextField.text ?? "")
         self.dismiss(animated: true, completion: {});
         self.navigationController?.popViewController(animated: true);
     }
