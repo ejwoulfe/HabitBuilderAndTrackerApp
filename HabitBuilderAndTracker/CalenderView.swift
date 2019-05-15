@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 struct Colors {
     static var darkGray = #colorLiteral(red: 0.3764705882, green: 0.3647058824, blue: 0.3647058824, alpha: 1)
@@ -47,6 +48,7 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         
         initializeView()
     }
@@ -123,7 +125,93 @@ class CalenderView: UIView, UICollectionViewDelegate, UICollectionViewDataSource
         cell?.backgroundColor=Colors.lightBlue
         let lbl = cell?.subviews[1] as! UILabel
         lbl.textColor=UIColor.white
+        // monday = 2, 9, 16, 23, 30
+        // tuesday = 3, 10, 17, 24, 31
+        // wednesday = 4, 11, 18, 25, 32
+        // thursday = 5, 12, 19, 26, 33
+        // friday = 6, 13, 20, 27, 34
+        // saturday = 7, 14, 21, 28, 35
+        // sunday = 1, 8, 15, 22, 29
+        if(indexPath.row + 1 == 2 || indexPath.row + 1 == 9 || indexPath.row + 1 == 16 || indexPath.row + 1 == 23 || indexPath.row + 1 == 30 || indexPath.row + 1 == 37){
+            fetchAndPrintEachPerson(day: "monday")
+        }else if(indexPath.row + 1 == 3 || indexPath.row + 1 == 10 || indexPath.row + 1 == 17 || indexPath.row + 1 == 24 || indexPath.row + 1 == 31){
+            fetchAndPrintEachPerson(day: "tuesday")
+        }else if(indexPath.row + 1 == 4 || indexPath.row + 1 == 11 || indexPath.row + 1 == 18 || indexPath.row + 1 == 25 || indexPath.row + 1 == 32){
+            fetchAndPrintEachPerson(day: "wednesday")
+        }else if(indexPath.row + 1 == 5 || indexPath.row + 1 == 12 || indexPath.row + 1 == 19 || indexPath.row + 1 == 26 || indexPath.row + 1 == 33){
+            fetchAndPrintEachPerson(day: "thursday")
+        }else if(indexPath.row + 1 == 6 || indexPath.row + 1 == 13 || indexPath.row + 1 == 20 || indexPath.row + 1 == 27 || indexPath.row + 1 == 34){
+            fetchAndPrintEachPerson(day: "friday")
+        }else if(indexPath.row + 1 == 7 || indexPath.row + 1 == 14 || indexPath.row + 1 == 21 || indexPath.row + 1 == 28 || indexPath.row + 1 == 35){
+            fetchAndPrintEachPerson(day: "saturday")
+        }else if(indexPath.row + 1 == 1 || indexPath.row + 1 == 8 || indexPath.row + 1 == 15 || indexPath.row + 1 == 22 || indexPath.row + 1 == 29 || indexPath.row + 1 == 36){
+            fetchAndPrintEachPerson(day: "sunday")
+        }
+    }
     
+    func fetchAndPrintEachPerson(day: String) {
+        let fetchRequest: NSFetchRequest<Habit> = Habit.fetchRequest()
+        
+        do{
+            let habits = try PersistenceService.context.fetch(fetchRequest)
+            switch day {
+            case "monday":
+                print("Habits for Monday:")
+                for item in habits{
+                    if(item.monday == true){
+                        print(item.name!)
+                    }
+                }
+            case "tuesday":
+                print("Habits for Tuesday:")
+                for item in habits{
+                    if(item.tuesday == true){
+                        print(item.name!)
+                    }
+                }
+            case "wednesday":
+                print("Habits for Wednesday:")
+                for item in habits{
+                    if(item.wednesday == true){
+                        print(item.name!)
+                    }
+                }
+            case "thursday":
+                print("Habits for Thursday:")
+                for item in habits{
+                    if(item.thursday == true){
+                        print(item.name!)
+                    }
+                }
+            case "friday":
+                print("Habits for Friday:")
+                for item in habits{
+                    if(item.friday == true){
+                        print(item.name!)
+                    }
+                }
+            case "saturday":
+                print("Habits for Saturday:")
+                for item in habits{
+                    if(item.saturday == true){
+                        print(item.name!)
+                    }
+                }
+            case "sunday":
+                print("Habits for Sunday:")
+                for item in habits{
+                    if(item.sunday == true){
+                        print(item.name!)
+                    }
+                }
+            default:
+                print("No Habits Found")
+            }
+           
+        } catch let error as NSError {
+            // something went wrong, print the error.
+            print(error.description)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

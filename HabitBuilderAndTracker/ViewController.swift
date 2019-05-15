@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent=false
         self.view.backgroundColor=Style.bgColor
         
+        
         view.addSubview(calenderView)
         calenderView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive=true
         calenderView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -12).isActive=true
@@ -53,5 +54,6 @@ class ViewController: UIViewController {
         return v
     }()
     
+
 }
 

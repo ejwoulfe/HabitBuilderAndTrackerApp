@@ -12,7 +12,10 @@
 		00855AF12281DF3F001C183F /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00855AF02281DF3F001C183F /* DayViewController.swift */; };
 		00855AF32281DFDC001C183F /* DayView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00855AF22281DFDC001C183F /* DayView.storyboard */; };
 		00AA47A8228B5C8E00DC02C4 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47A7228B5C8E00DC02C4 /* HabitCell.swift */; };
-		00AA47AA228B5D8500DC02C4 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00AA47A9228B5D8500DC02C4 /* Habit.swift */; };
+		00DB795E228C8A8F00239CED /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB795D228C8A8F00239CED /* PersistenceService.swift */; };
+		00DB7961228C8CA700239CED /* HabitBuilderAndTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 00DB795F228C8CA700239CED /* HabitBuilderAndTracker.xcdatamodeld */; };
+		00DB7968228C9D0C00239CED /* Habit+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB7966228C9D0C00239CED /* Habit+CoreDataClass.swift */; };
+		00DB7969228C9D0C00239CED /* Habit+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DB7967228C9D0C00239CED /* Habit+CoreDataProperties.swift */; };
 		D92381B61F9C5CDE002FF5E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92381B51F9C5CDE002FF5E0 /* AppDelegate.swift */; };
 		D92381B81F9C5CDE002FF5E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92381B71F9C5CDE002FF5E0 /* ViewController.swift */; };
 		D92381BD1F9C5CDE002FF5E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D92381BC1F9C5CDE002FF5E0 /* Assets.xcassets */; };
@@ -28,7 +31,10 @@
 		00855AF02281DF3F001C183F /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		00855AF22281DFDC001C183F /* DayView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DayView.storyboard; sourceTree = "<group>"; };
 		00AA47A7228B5C8E00DC02C4 /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
-		00AA47A9228B5D8500DC02C4 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		00DB795D228C8A8F00239CED /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		00DB7960228C8CA700239CED /* HabitBuilderAndTracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HabitBuilderAndTracker.xcdatamodel; sourceTree = "<group>"; };
+		00DB7966228C9D0C00239CED /* Habit+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataClass.swift"; sourceTree = "<group>"; };
+		00DB7967228C9D0C00239CED /* Habit+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Habit+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D92381B21F9C5CDE002FF5E0 /* HabitBuilderAndTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitBuilderAndTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92381B51F9C5CDE002FF5E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D92381B71F9C5CDE002FF5E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +75,8 @@
 		D92381B41F9C5CDE002FF5E0 /* HabitBuilderAndTracker */ = {
 			isa = PBXGroup;
 			children = (
+				00DB7966228C9D0C00239CED /* Habit+CoreDataClass.swift */,
+				00DB7967228C9D0C00239CED /* Habit+CoreDataProperties.swift */,
 				00252AE222665B3C0052CF8F /* Info.plist */,
 				D92381B51F9C5CDE002FF5E0 /* AppDelegate.swift */,
 				D92381B71F9C5CDE002FF5E0 /* ViewController.swift */,
@@ -81,7 +89,8 @@
 				00855AF22281DFDC001C183F /* DayView.storyboard */,
 				00326FD522821DDA0063355D /* newHabitViewController.swift */,
 				00AA47A7228B5C8E00DC02C4 /* HabitCell.swift */,
-				00AA47A9228B5D8500DC02C4 /* Habit.swift */,
+				00DB795D228C8A8F00239CED /* PersistenceService.swift */,
+				00DB795F228C8CA700239CED /* HabitBuilderAndTracker.xcdatamodeld */,
 			);
 			path = HabitBuilderAndTracker;
 			sourceTree = "<group>";
@@ -162,9 +171,12 @@
 				D92381B81F9C5CDE002FF5E0 /* ViewController.swift in Sources */,
 				00855AF12281DF3F001C183F /* DayViewController.swift in Sources */,
 				D92381CA1F9C5EC3002FF5E0 /* WeekdaysView.swift in Sources */,
+				00DB7968228C9D0C00239CED /* Habit+CoreDataClass.swift in Sources */,
+				00DB7969228C9D0C00239CED /* Habit+CoreDataProperties.swift in Sources */,
+				00DB795E228C8A8F00239CED /* PersistenceService.swift in Sources */,
 				D92381C81F9C5D61002FF5E0 /* MonthView.swift in Sources */,
 				D92381CC1F9C5F68002FF5E0 /* CalenderView.swift in Sources */,
-				00AA47AA228B5D8500DC02C4 /* Habit.swift in Sources */,
+				00DB7961228C8CA700239CED /* HabitBuilderAndTracker.xcdatamodeld in Sources */,
 				00326FD622821DDA0063355D /* newHabitViewController.swift in Sources */,
 				D92381B61F9C5CDE002FF5E0 /* AppDelegate.swift in Sources */,
 				00AA47A8228B5C8E00DC02C4 /* HabitCell.swift in Sources */,
@@ -346,6 +358,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		00DB795F228C8CA700239CED /* HabitBuilderAndTracker.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				00DB7960228C8CA700239CED /* HabitBuilderAndTracker.xcdatamodel */,
+			);
+			currentVersion = 00DB7960228C8CA700239CED /* HabitBuilderAndTracker.xcdatamodel */;
+			path = HabitBuilderAndTracker.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D92381AA1F9C5CDE002FF5E0 /* Project object */;
 }

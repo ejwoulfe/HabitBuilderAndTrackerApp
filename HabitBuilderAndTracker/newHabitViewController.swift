@@ -17,7 +17,7 @@ class newHabitViewController: UIViewController{
     var friday = false;
     var saturday = false;
     var sunday = false;
-    public var update: ((String) ->())!
+    public var update: ((String, Bool, Bool, Bool, Bool, Bool, Bool, Bool) ->())!
     
     @IBAction func cancelButton(_ sender: Any) {
         self.dismiss(animated: true, completion: {});
@@ -106,7 +106,7 @@ class newHabitViewController: UIViewController{
    
     
     @IBAction func habitButtonPressed(_ sender: UIButton) {
-        update(habitNameTextField.text ?? "")
+        update(habitNameTextField.text ?? "", monday, tuesday, wednesday, thursday, friday, saturday, sunday)
         self.dismiss(animated: true, completion: {});
         self.navigationController?.popViewController(animated: true);
     }
